@@ -1,0 +1,36 @@
+@import '../sass/global';
+@import '../sass/variable';
+
+.marquee {
+    // height: 30vh;
+    width: 100vw;
+    overflow: hidden;
+    background-color: $primary;
+
+    display: flex;
+    align-items: center;
+
+    div {
+        @include container;
+
+        [id=marquee_text] {
+            font-size: 5rem;
+            white-space: nowrap;
+            font-weight: bolder;
+            color: transparent;
+            -webkit-text-stroke-color: rgba(128, 128, 128, .1);
+            -webkit-text-stroke-width: 2px;
+            animation: slider 20s ease infinite alternate;
+        }
+
+        @keyframes slider {
+            0% {
+                transform: translateX(0%);
+            }
+
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+    }
+}

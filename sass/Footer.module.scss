@@ -1,0 +1,85 @@
+@import '../sass/global';
+@import '../sass/variable';
+
+.footer {
+    height: fit-content;
+    width: 100vw;
+    background-color: $primary;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    [class=footer_row_container] {
+        @include container;
+        display: grid;
+        grid-template-columns: 2fr 2fr 1fr;
+
+        div {
+
+            &:nth-child(1),
+            &:nth-child(2) {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+
+
+
+
+                ul {
+                    list-style-type: none;
+                    padding-left: 0;
+
+                    li {
+                        line-height: 1.9;
+                        color: white;
+
+                        &:first-child {
+                            color: $gray;
+                            text-transform: uppercase;
+                            font-size: small;
+                        }
+                    }
+                }
+            }
+
+
+
+            &:nth-child(3) {
+                color: $gray;
+                padding: 0 1rem;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .footer {
+        height: fit-content;
+
+        [class=footer_row_container] {
+            grid-template-columns: 1fr;
+
+            div {
+
+                &:nth-child(1),
+                &:nth-child(2) {
+                    // background-color: yellow;
+                    padding: 0;
+                    grid-template-columns: 1fr;
+
+                    &::after {
+                        display: none;
+                    }
+
+                    ul {
+                        padding: 0;
+                    }
+                }
+
+                &:nth-child(3) {
+                    padding: 0;
+                }
+            }
+        }
+    }
+}

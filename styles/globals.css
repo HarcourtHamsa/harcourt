@@ -2,15 +2,37 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  line-height: 1.6;
+  font-family: "SF Pro";
+
+  overflow-x: hidden;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+
+@font-face {
+  font-family: "SF Pro";
+  src: url('../assets/fonts/GraphikRegular.otf');
 }
 
-* {
-  box-sizing: border-box;
+@font-face {
+  font-family: "STRRETCH";
+  src: url('../assets/fonts/Syncopate-Bold.ttf');
 }
+
+@font-face {
+  font-family: "Bogart Italic";
+  src: url('../assets/fonts/Bogart-Light-Italic-trial.ttf');
+}
+
+@font-face {
+  font-family: "Boing";
+  src: url('../assets/fonts/NaNJaune-MidiBold.woff2');
+}
+
+h1, h2{
+  font-family: "Boing";
+}
+
+/* *{
+  font-family: "SF Pro";
+} */

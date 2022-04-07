@@ -1,0 +1,24 @@
+.btn {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: tomato;
+
+    position: fixed;
+    bottom: 10%;
+    right: 5%;
+
+    /* From https://css.glass */
+    background: rgba(255, 255, 255, 0.2);
+    // border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    // border: 1px solid rgba(255, 255, 255, 0.3);
+
+    // box-shadow: 2px 12px 25px 8px grey;
+}

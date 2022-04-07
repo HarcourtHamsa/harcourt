@@ -1,0 +1,15 @@
+@mixin container {
+    max-width: 80vw;
+    margin: auto;
+}
+
+@mixin button($border, $bg: transparent, $color: white) {
+    border: 0;
+    padding: 10px 32px;
+    border: 1px solid $border;
+    background-color: $bg;
+    color: $color;
+    border-radius: 5px;
+    // height: 50px;
+    // font-size: medium;
+}

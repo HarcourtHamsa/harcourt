@@ -1,0 +1,100 @@
+@import '../sass/variable';
+@import '../sass/global';
+
+
+.hero {
+    height: 100vh;
+    width: 100vw;
+    z-index: -1;
+    // background: url('../assets/images/pattern.svg') no-repeat center;
+    // background-size: contain;
+    background-color: $primary;
+    color: white;
+
+    display: flex;
+    align-items: flex-start;
+
+
+    [class=jumbotron] {
+        @include container;
+        width: 100%;
+
+
+        h1 {
+            width: 50vw;
+            margin-right: auto;
+            font-size: 4.8rem;
+            line-height: 1;
+            margin-bottom: 0;
+            font-family: "Boing";
+        }
+
+        p {
+            // background-color: red;
+            width: 500px;
+            // margin: auto;
+            margin-top: 1.5rem;
+            margin-bottom: 1.8rem;
+            // color: $gray;
+        }
+
+
+        [id=btn_group] {
+            margin-top: 2rem !important;
+
+            button {
+                margin-right: 1rem;
+
+                &:nth-child(1) {
+                    @include button(black, tomato);
+                    padding: 20px 40px;
+
+                }
+
+                &:nth-child(2) {
+                    @include button(tomato, transparent, tomato);
+                    padding: 20px 40px;
+                    border: 0;
+
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .hero {
+        // background-color: red;
+        height: 100vh;
+
+        [class=jumbotron] {
+
+            h1 {
+                font-size: 2.6rem;
+                // background-color: green;
+            }
+
+            p {
+                width: 100%;
+            }
+
+            h1,
+            [class=hero_desc_text] {
+                width: 100%;
+            }
+
+            [id=btn_group] {
+                display: flex;
+                flex-direction: row;
+                gap: .5rem;
+
+                button {
+                    padding: 1rem 20px !important;
+                    font-size: small;
+                    font-family: "SF Pro";
+                }
+            }
+
+        }
+    }
+}
