@@ -21,7 +21,7 @@
 
 
         h1 {
-            width: 50vw;
+            // width: 50vw;
             margin-right: auto;
             font-size: 4.8rem;
             line-height: 1;
@@ -33,7 +33,7 @@
             // background-color: red;
             width: 500px;
             // margin: auto;
-            margin-top: 1.5rem;
+            margin-top: 2rem;
             margin-bottom: 1.8rem;
             // color: $gray;
         }
@@ -46,17 +46,18 @@
                 margin-right: 1rem;
 
                 &:nth-child(1) {
-                    @include button(black, tomato);
+                    @include button(black, $secondary, black);
                     padding: 20px 40px;
+                    font-size: 1rem;
+                    font-family: "Boing";
+
+                    span{
+                        font-family: "SF Pro";
+                    }
 
                 }
 
-                &:nth-child(2) {
-                    @include button(tomato, transparent, tomato);
-                    padding: 20px 40px;
-                    border: 0;
 
-                }
             }
         }
     }

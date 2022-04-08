@@ -6,7 +6,7 @@ import styles from "../sass/FloatingButton.module.scss";
 function FloatingButton() {
   return (
     <div className={styles.btn}>
-      <AiFillMessage size={30} color="white" />
+      <AiFillMessage size={35} color="white" />
     </div>
   );
 }

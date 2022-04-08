@@ -1,10 +1,9 @@
 import Head from "next/head";
 import Image from "next/image";
 
-import FloatingButton from "../components/FloatingButton";
-
 import Footer from "../components/Footer";
 import Hero from "../components/Hero";
+import FloatingButton from "../components/FloatingButton";
 
 import Cog from "../assets/images/cog.svg";
 import Design from "../assets/images/design.svg";
@@ -20,6 +19,8 @@ export default function Home() {
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       <Hero />
+
+      <FloatingButton />
 
       <section className={styles.section_2}>
         <div className="container">
@@ -62,39 +63,27 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <FloatingButton />
       <section className={styles.section_1}>
         <div>
-          <h2>Our services</h2>
+          <p className="sub">Our Services</p>
+          <h2>Our agency experts will provide you with the best services </h2>
           <div className="process_card_container">
             <div className="card">
-              <Image src={Cog} style={{transform: 'scale(1.4)'}}/>
+              <Image src={Cog} style={{ transform: "scale(1.4)" }} alt="" />
               <h3>Development</h3>
-              <p>
-                {" "}
-                We mostly use React Native to build our mobile apps. We also
-                work on React Native platform itself, Expo being a prime example
-              </p>
+              <p> We mostly use React Native to build our mobile apps.</p>
             </div>
 
             <div className="card">
-              <Image src={Design} style={{transform: 'scale(1.4)'}}/>
+              <Image src={Design} style={{ transform: "scale(1.4)" }} alt=""/>
               <h3>Design</h3>
-              <p>
-                {" "}
-                We build business solutions from scratch that deliver the best
-                experience for our clients and their users.
-              </p>
+              <p> We build business solutions from scratch that deliver</p>
             </div>
 
             <div className="card">
-              <Image src={Blockchain} />
+              <Image src={Blockchain} alt=""/>
               <h3>Blockchain</h3>
-              <p>
-                {" "}
-                Bring your smart contracts to life through an elegant DApp
-                interface. When designing, we have your target users in focus
-              </p>
+              <p> Bring your smart contracts to life through an elegant</p>
             </div>
           </div>
         </div>
@@ -102,7 +91,7 @@ export default function Home() {
 
       <section className={styles.section_4}>
         <div className="container">
-          <h2>Let's give life to your ideas :)</h2>
+          <h2>Let&apos;s give life to your ideas :)</h2>
           <p>Call & WhatsApp: +234 706 104 0362</p>
           <p>Email: info@ham.com</p>
         </div>

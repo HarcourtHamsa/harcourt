@@ -1,0 +1,29 @@
+@import '../sass/global';
+@import '../sass/variable';
+
+.loader {
+    background-color: $secondary;
+    width: 100vw;
+    height: 100vh;
+
+    [class=circle] {
+        width: 100vw;
+        height: 100vh;
+
+        // clip-path: circle(5%);
+        background-color: $primary;
+        transition: clip-path 1s;
+        animation: 1s circle reverse;
+
+
+        @keyframes circle {
+            0% {
+                clip-path: circle(75%);
+            }
+
+            100% {
+                clip-path: circle(0%);
+            }
+        }
+    }
+}

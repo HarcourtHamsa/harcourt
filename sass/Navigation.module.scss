@@ -2,113 +2,94 @@
 @import '../sass/variable';
 
 
+
 .nav {
-    height: 100vh;
-    width: 100vw;
+    height: 15vh;
+    width: 100vw !important;
     z-index: 10000000 !important;
-    background-color: white;
-    color: black;
+    background-color: $primary;
+    color: white;
+
+
+
+    [class=swing] {
+        position: fixed !important;
+        left: -90% !important;
+        top: -50% !important;
+        // background-color: turquoise;
+        width: fit-content;
+        transform: scale(.5);
+        // background-color: transparent;
+        // display: none;
+    }
+
+    // background: rgba(255, 255, 255, 0.2);
+    // // border-radius: 16px;
+    // box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    // backdrop-filter: blur(5px);
+    // -webkit-backdrop-filter: blur(5px);
+    // border: 1px solid rgba(255, 255, 255, 0.3);
 
     position: fixed;
     top: 0;
-    bottom: 0;
     left: 0;
-    right: 0;
 
     display: flex;
-    justify-content: center;
     align-items: center;
 
 
-    [class=navigation_container] {
-        height: 80%;
-        width: inherit;
+
+    [class=container] {
         @include container;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        // background-color: red;
+        // transform: translateX(-10%);
 
-        div {
-            height: 100%;
+        [id=logo]{
+            font-size: xx-large;
+            font-family: "STRRETCH";
+            font-family: "Boing";
+        }
 
-            &:nth-child(1) {
-                height: 100%;
+        [id=nav_links] {
+            ul {
+                margin: 0;
+                display: flex;
+                list-style-type: none;
 
-                ul {
-                    height: inherit;
-                    list-style-type: none;
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: space-around !important;
-                    padding-left: 0;
-                    margin: 0;
-                    animation: slide .2s ease;
+                li {
+                    margin-left: 2rem;
 
-                    @keyframes slide {
-                        0% {
-                            transform: translateX(-100%);
-                        }
+                    a {
+                        text-decoration: none;
+                        color: white;
 
-                        100% {
-                            transform: translateX(0%);
-                            // background-color: rebeccapurple;
-                        }
-                    }
-
-
-
-                    li {
-                        padding: 0;
-                        margin-top: 0;
-
-                        a {
-                            // font-family: "Boing" !important;
-                            font-weight: 900;
-                            font-size: 2rem;
-                            letter-spacing: 2px;
-                            // -webkit-text-stroke: 2px;
-                            // -webkit-text-stroke-color: black;
-                            // color: transparent;
-                            // font-size: 2rem;
+                        &:hover {
+                            cursor: pointer;
+                            color: $secondary;
+                            // background-color: red;
                         }
                     }
+
                 }
             }
+        }
 
-            &:nth-child(2) {
-                height: 100%;
+        [id=hamburger] {
+            display: none;
 
-                display: flex;
-                flex-direction: column;
-                justify-content: space-between;
-                align-items: flex-end;
+            [class=line] {
+                width: 40px;
+                height: 2px;
+                background-color: white;
+                margin: 5px;
 
-                [id=close_btn] {
-                    transform: scale(.8);
-                    margin: .4rem;
-
-                    &:hover {
-                        cursor: pointer;
-                    }
-                }
-
-                [class=navigation_contact_info] {
-                    height: fit-content;
-                    line-height: .5;
-
-                    p {
-                        a {
-                            text-decoration: none;
-                            color: $gray;
-                        }
-                    }
-
-                    button {
-                        border: 0;
-                        width: 100%;
-                        padding: 15px 0;
-                        border: 2px solid $primary;
-                        background-color: transparent;
-                    }
+                &:first-child,
+                &:last-child {
+                    width: 20px;
+                    margin: auto;
                 }
             }
         }
@@ -117,88 +98,69 @@
 
 
 @media only screen and (max-width: 800px) {
+
+
     .nav {
+        // background-color: gray;
 
-        [class=navigation_container] {
+        [class=swing] {
+            width: 0;
+            height: 0;
+            display: none !important;
+        }
+
+        [class=container] {
+            // background-color: red;
+            // width: 100vw !important;
             padding-top: 3vh;
-            grid-template-columns: 1fr 1fr;
 
-            div {
-                &:nth-child(1) {
-                    ul {
-                        justify-content: space-between !important;
 
-                        li {
+            [id=hamburger] {
+                display: block;
+            }
 
-                            a {
-                                font-size: medium;
-                            }
+
+            [id=nav_links] {
+                display: none;
+            }
+
+            [class=active] {
+                display: block;
+                background-color: whitesmoke;
+                padding: 1rem;
+                height: fit-content;
+                width: 80% !important;
+                margin: 10vh 0 auto auto;
+                // margin-top: 15vh;
+                // margin: auto !important;
+                border-radius: 10px;
+                transform: translateX(-5%);
+                position: fixed;
+
+                // background: rgba(255, 255, 255, 0.2);
+                // border-radius: 16px;
+                box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+                // backdrop-filter: blur(5px);
+                // -webkit-backdrop-filter: blur(5px);
+
+                // box-shadow: 5px 4px 20px 0px grey;
+
+                ul {
+                    display: flex;
+                    flex-direction: column;
+                    padding-left: 0;
+                    line-height: 3rem;
+
+                    li {
+                        a {
+                            color: $primary;
                         }
-
                     }
+
+
                 }
 
-                &:nth-child(2) {
-                    p {
-                        &:nth-child(1) {
-                            margin: 0;
-                        }
-
-                    }
-
-                    [id=close_btn] {
-                        margin: -5rem;
-                        transform: translateY(-15%) translateX(15%) scale(.7);
-                        // background-color: red;
-                    }
-
-                    [class=navigation_contact_info] {
-                        display: none;
-                    }
-                }
             }
         }
-    }
-}
-
-.navigation_bar_default {
-    width: 100%;
-
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    background-color: $primary;
-
-    div {
-        height: 15vh;
-        @include container;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-
-        [id=logo] {
-            font-family: "Boing" !important;
-            font-size: large;
-            font-stretch: ultra-expanded !important;
-        }
-
-        [id=hamburger] {
-            display: flex;
-            align-items: center;
-            color: white;
-            
-            [class=line] {
-                width: 30px;
-                height: 2px;
-                background-color: white;
-                margin: 5px;
-            }
-
-            &:hover {
-                cursor: pointer;
-            }
-        }
-
     }
 }
